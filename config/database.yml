@@ -1,8 +1,10 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  host: 192.168.0.2 #dirección del servidor de base de datos
+  host: 107.170.81.100 #dirección del servidor de base de datos
   pool: 5
+  username: omnibuild
+  password: holamundo
 
 development:
   <<: *default
@@ -15,5 +17,3 @@ test:
 production:
   <<: *default
   database: mitigacion_production
-  username: mitigacion
-  password: <%= ENV['MITIGACION_DATABASE_PASSWORD'] %>
