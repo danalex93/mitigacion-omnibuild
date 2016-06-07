@@ -1,0 +1,19 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  host: 192.168.0.2 #dirección del servidor de base de datos
+  pool: 5
+
+development:
+  <<: *default
+  database: mitigacion_development
+
+test:
+  <<: *default
+  database: mitigacion_test
+
+production:
+  <<: *default
+  database: mitigacion_production
+  username: mitigacion
+  password: <%= ENV['MITIGACION_DATABASE_PASSWORD'] %>
